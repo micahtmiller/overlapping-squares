@@ -40,11 +40,11 @@ rectangles = [
 ]
 
 
-def create_mapping():
+def create_mapping(rect_list):
     mapping = {}
-    for rect1 in rectangles:
+    for rect1 in rect_list:
         not_self = []
-        for rect2 in rectangles:
+        for rect2 in rect_list:
             if rect1 != rect2:
                 not_self.append(rect2)
         mapping.update({rect1: not_self})
