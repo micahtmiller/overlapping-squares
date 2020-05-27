@@ -35,7 +35,8 @@ class Rectangle:
 rectangles = [
     Rectangle(Points(0, 5), Points(5, 0)),
     Rectangle(Points(10, 15), Points(15, 10)),
-    Rectangle(Points(2.5, 7), Points(7.5, 3))
+    Rectangle(Points(2.5, 7), Points(7.5, 3)),
+    Rectangle(Points(20, 5), Points(30, 15))
 ]
 
 
@@ -52,7 +53,7 @@ def create_mapping():
 
 def compare_rectangles(rect1, rect2):
     '''
-    1. Break compenents down: X, Y
+    1. Break components down: X, Y
     2. For each component, if max or min of rect1 is between max and min of rect2, then there is overlap
     '''
     x_between = False
@@ -66,7 +67,7 @@ def compare_rectangles(rect1, rect2):
     if cond1 or cond2:
         y_between = True
 
-    if x_between or y_between:
+    if x_between and y_between:
         print('Overlap!')
         return True
 
